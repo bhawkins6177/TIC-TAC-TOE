@@ -1,21 +1,24 @@
 body {
-    display: flex;
-    justify-content: center;
+    
 }
-
-#board {
+.boardBefore {
+    display: none;
+}
+.boardAfter {
     display:flex;
     flex-wrap: wrap;
     height: 40em;
     width: 40em;
     justify-content: space-evenly;
     border-color: white;
+    border-radius: 20px;
+    background-color: black;
     
 }
 .spot {
     display: flex;
-    height: 194px;
-    width: 200px;
+    height: 30%;
+    width: 30%;
     margin-top: 6px;
     background-color: white;
     text-align: center;
@@ -23,8 +26,11 @@ body {
     justify-content: center;
     font-size: 250px;
     font-family: sans-serif;
+    border-radius: 23px;
+    border-style: outset;
+
 }
-}
+
 #spot1 {
 
 }
@@ -52,12 +58,124 @@ body {
 #spot9 {
     
 }
+#form {
+    display: flex;
+    height: 24em;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 17em;
+}
+
 #formDiv {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
+    background-color: yellow;
+    width: 37em;
+    height: 50em;
+    margin-left: 38em;
+    border-radius: 176px;
+}
+.inputField {
+    display: flex;
+    height: 2em;
+    width: 12em;
+    font-size: 24px;
+    text-align: center
+}
+label {
+    font-size: 30px;
 }
 #sBtnContainer {
     display: flex;
+    margin-bottom: 5em;
+}
+#startBtn {
+    height: 70px;
+    width: 206px;
+    font-size: 37px;
+}
+.player1DisplayBefore {
+   display: none;
+
+}
+.player1DisplayAfter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: deepskyblue;
+    width: 30em;
+    height: 30em;
+    margin-right: 40px;
+    border-radius: 75px;
+    border-style: outset;
+}
+.player2DisplayBefore {
+    display: none;
+}
+.player2DisplayAfter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: deepskyblue;
+    width: 30em;
+    height: 30em;
+    margin-left: 40px;
+    border-radius: 75px;
+    border-style:outset;
+}
+#player1Name{
+display: flex;
+font-size: 45px;
+font-family: sans-serif;
+justify-content: center;
+margin-bottom: 3em;
+
+}
+#player2Name {
+display: flex;
+font-size: 45px;
+font-family: sans-serif;
+justify-content: center;
+margin-bottom: 3em;
+
+}
+
+#player1Score {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+    font-size: 64px;
+}
+#player2Score {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+    font-size: 64px;
+}
+#clearButton {
+    background-color: rgb(18, 34, 105);
+    height: 40px;
+    width: 90px;
+    border-radius: 20px;
+    color:white;
+    margin-left: 25px;
+}
+#topHalf {
+    display: flex;
+    justify-content: center;
+}
+#bottomHalf {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+#newGameBtn {
+    background-color: rgb(18, 34, 105);
+    height: 40px;
+    width: 90px;
+    border-radius: 20px;
+    color: white;
+    margin-right: 25px;
 }
