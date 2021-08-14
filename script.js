@@ -2,7 +2,7 @@
 
 
 
-const player = (name) => {
+const player = (name) => {// holds player names
     
 return {'name':name};
 }
@@ -12,14 +12,14 @@ let turn = 0;
 let player1S = 0;
 let player2S = 0; 
 
-const gameFlow = (() => {
+const gameFlow = (() => {// hold the wincondition, winner function, and clearBoard function
     const player1Score = document.querySelector('#player1Score');
     const player2Score = document.querySelector('#player2Score');
     player1Score.textContent = player1S;
     player2Score.textContent = player1S;
     const winCondition = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
     const spots = document.querySelectorAll('.spot')
-    function winner (array) {
+    function winner (array) {       // uses the conditions set for the gameArray in order to declare a winner
         
         for(let i = 0; i<winCondition.length; i++) {
             if (array[winCondition[i][0]] === 'X' && array[winCondition[i][1]] === 'X' && array[winCondition[i][2]] === 'X' ) {
@@ -39,12 +39,11 @@ const gameFlow = (() => {
             }
         }
     }
-    //function keepScore() {
-    //}
-    function clearBoard (){
-        //gameFlow.clearBoard(gameBoard.gameArray)
+    
+    function clearBoard (){ // gets rid of all moves made by players 
+        
         gameBoard.gameArray = [' ',' ',' ',' ',' ',' ',' ',' ',' ',]
-        // find a way to updatw the Spots id with the gameArray
+    
         spot1.textContent = gameBoard.gameArray[0];
         spot2.textContent = gameBoard.gameArray[1];
         spot3.textContent = gameBoard.gameArray[2];
@@ -72,9 +71,9 @@ const gameFlow = (() => {
     })();
     const bottomHalf = document.querySelector('#bottomHalf')
 
-const gameBoard = (() => {
+const gameBoard = (() => {// creates the board, removes the form and uses input value, holds most event listeners and querySelecters
 let gameArray = [' ',' ',' ',' ',' ',' ',' ',' ',' ']
-function createBoard (array){                   // all of the querySelecters 
+function createBoard (array){                   // all of the querySelecters, connects the game spots to the gameArray 
     const spot1 = document.querySelector('#spot1');
     const spot2 = document.querySelector('#spot2');
     const spot3 = document.querySelector('#spot3');
@@ -105,7 +104,7 @@ function createBoard (array){                   // all of the querySelecters
     spot8.textContent = array[7];
     spot9.textContent = array[8];
     
-    function addBoard (){
+    function addBoard (){                                          // removed the form and shows the player display
         player1 = player(document.getElementById('p1Input').value)
         player2 = player(document.getElementById('p2Input').value)
         formDiv.remove();
@@ -130,17 +129,17 @@ function createBoard (array){                   // all of the querySelecters
 
     }
     
-    startBtn.addEventListener('click',function(){
+    startBtn.addEventListener('click',function(){// starts the game using the form input values for the player name
         addBoard()
     })
-    clearButton.addEventListener('click', function(){
+    clearButton.addEventListener('click', function(){   
         gameFlow.clearBoard();
         turn = 0;
     })
     
     const spots = document.querySelectorAll('.spot')
     
-    for (let i = 0; i<spots.length; i++){                       
+    for (let i = 0; i<spots.length; i++){           // populates the board by clicking on the stopts, keeps track of whos turn it is                
         spots[i].addEventListener('click', function() {         
             
             if (turn%2 ===0 && spots[i].textContent == ' '){
